@@ -13,8 +13,8 @@
         android:theme="@style/Theme.SchedifyFCA">
         <activity
             android:name=".MainActivity"
-            android:exported="true">
-            <intent-filter>
+            android:exported="true"> <!--esta en true porque es la primera que se va a ejecutar en la aplicación-->
+            <intent-filter> <!--Nos eplica que va a ser la actividad principal por lanzar-->
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
