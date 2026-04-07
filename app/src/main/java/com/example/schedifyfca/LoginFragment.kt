@@ -5,12 +5,13 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import com.example.schedifyfca.databinding.FragmentLoginBinding
 
 class LoginFragment : Fragment() {
-    private var _binding: FragmentLoginBinding? = null //variable --> el simbolo de interrogación
-                                                      //marca que puede ser opcional, esta asignado
-                                                      //pero no cotiene valor, puede o no existir en memoria
+    private var _binding: FragmentLoginBinding? = null //variable --> el símbolo de interrogación
+                                                      //marca que puede ser opcional, está asignado
+                                                      //aunque no contiene valor, puede o no existir en memoria
     private val binding get() = _binding!! //constante, es la que vamos a usar
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,6 +25,9 @@ class LoginFragment : Fragment() {
 
         //Inicializamos con el FragmentLoginBinding.inflate, con la referencia del fragment.login
         _binding = FragmentLoginBinding.inflate(inflater, container, false)
+        binding.registerButton.setOnClickListener {
+            findNavController().navigate(R.id.action_loginFragment_to_registerFragment)
+        }
         return binding.root
     }
 }
